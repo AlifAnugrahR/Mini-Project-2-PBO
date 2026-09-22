@@ -10,10 +10,10 @@ Program ini merupakan aplikasi berbasis konsol (Command Line Interface) yang dig
 
 Program menyediakan empat fitur utama:
 
-- **Tambah Satwa** – menambahkan data satwa baru.
-- **Tampilkan Satwa** – menampilkan seluruh data satwa yang tersimpan.
-- **Update Satwa** – mengubah nama satwa berdasarkan ID.
-- **Hapus Satwa** – menghapus data satwa berdasarkan ID.
+- **Tambah Satwa** - menambahkan data satwa baru.
+- **Tampilkan Satwa** - menampilkan seluruh data satwa yang tersimpan.
+- **Update Satwa** - mengubah nama satwa berdasarkan ID.
+- **Hapus Satwa** - menghapus data satwa berdasarkan ID.
 
 Program juga dilengkapi dengan validasi input agar data yang dimasukkan pengguna sesuai ketentuan, serta pesan output bergaya santai dengan sapaan "Boss" sebagai ciri khas program ini.
 
@@ -25,29 +25,25 @@ Program ini menerapkan struktur **MVC (Model, View, Controller)** s
 
 ### Model
 
-Berisi class `Satwa`, `Mamalia`, dan `Reptil`.
-
+Berisi class Satwa, Mamalia, dan Reptil.
 Bagian ini bertugas menyimpan data satwa.
 
 ### View
 
-Berisi class `Menu`.
-
+Berisi class Menu.
 Bagian ini bertugas menampilkan menu dan menerima pilihan dari pengguna.
 
 ### Controller
 
-Berisi class `SatwaCRUD` dan `SatwaCek`.
-
+Berisi class SatwaCRUD dan SatwaCek.
 Bagian ini bertugas mengatur proses tambah, tampil, update, hapus data, serta memeriksa input pengguna.
 
 ### Main
 
-Berisi class `MinproPbo2Satwaygdilindungi`.
-
+Berisi class MinproPbo2Satwaygdilindungi.
 Bagian ini menjalankan program, yaitu membuat objek `Scanner` dan `SatwaCRUD`, lalu memanggil `Menu`.
 
-**[Struktur Package MVC]**
+**Struktur Package MVC**
 
 <img width="327" height="236" alt="image" src="https://github.com/user-attachments/assets/99d072ea-08a3-4b72-ab7d-5d5f928bff7c" />
 
@@ -58,9 +54,8 @@ Gambar di atas menunjukkan struktur package project, yaitu package Model berisi 
 
 # Alur Program
 
-Program dimulai dari method `main()` pada class `MinproPbo2Satwaygdilindungi`. Program membuat objek `Scanner` untuk membaca input, kemudian membuat objek `SatwaCRUD`. Saat objek `SatwaCRUD` dibuat, constructor-nya langsung mengisi data awal (dummy data) ke dalam `ArrayList`.
-
-Selanjutnya, `Menu.jalankan()` dipanggil dan menampilkan menu utama secara berulang menggunakan `while (true)`, sampai pengguna memilih untuk keluar.
+Program dimulai dari method main() pada class MinproPbo2Satwaygdilindungi. Program membuat objek Scanner untuk membaca input, kemudian membuat objek SatwaCRUD. Saat objek SatwaCRUD dibuat, constructor-nya langsung mengisi data awal (dummy data) ke dalam ArrayList.
+Selanjutnya, Menu.jalankan() dipanggil dan menampilkan menu utama secara berulang menggunakan while (true), sampai pengguna memilih untuk keluar.
 
 **[Menu Utama]**
 
@@ -68,8 +63,7 @@ Selanjutnya, `Menu.jalankan()` dipanggil dan menampilkan menu utama secara berul
 
 
 Gambar di atas menunjukkan tampilan menu utama saat program dijalankan, yang terdiri dari lima pilihan: Tambah Satwa, Tampilkan Satwa, Update Satwa, Hapus Satwa, dan Keluar.
-
-Pengguna memasukkan angka sesuai pilihan menu. Program menggunakan `switch` untuk menentukan proses yang dijalankan:
+Pengguna memasukkan angka sesuai pilihan menu. Program menggunakan switch untuk menentukan proses yang dijalankan:
 
 ```java
 switch (pilihan) {
@@ -99,19 +93,18 @@ switch (pilihan) {
 }
 ```
 
-Jika pilihan sesuai (1–5), program memanggil method yang sesuai di `SatwaCRUD`. Jika pilihan tidak sesuai, program menampilkan pesan menu tidak tersedia dan kembali menampilkan menu, tanpa menghentikan program. Ketika pengguna memilih menu 5, perulangan `while` dihentikan dengan `return` dan program selesai.
+Jika pilihan sesuai (1–5), program memanggil method yang sesuai di SatwaCRUD. Jika pilihan tidak sesuai, program menampilkan pesan menu tidak tersedia dan kembali menampilkan menu, tanpa menghentikan program. Ketika pengguna memilih menu 5, perulangan while dihentikan dengan return dan program selesai.
 
 ---
 
 # CRUD
 
-Seluruh proses CRUD ditangani oleh class `SatwaCRUD` yang menyimpan data pada `ArrayList<Satwa>` bernama `daftarSatwa`.
+Seluruh proses CRUD ditangani oleh class SatwaCRUD yang menyimpan data pada ArrayList<Satwa> bernama daftarSatwa.
 
 ## Create tambahSatwa()
 
-**Fungsi:** menambahkan data satwa baru ke dalam `ArrayList`.
-
-**Proses:** pengguna memasukkan ID, nama, dan jenis satwa. Program mengecek apakah ID sudah dipakai. Setelah jenis dipastikan valid (Mamalia atau Reptil), program meminta data tambahan sesuai jenisnya, lalu membuat objek `Mamalia` atau `Reptil` dan menambahkannya ke `ArrayList` menggunakan `add()`.
+**Fungsi:** menambahkan data satwa baru ke dalam ArrayList.
+**Proses:** pengguna memasukkan ID, nama, dan jenis satwa. Program mengecek apakah ID sudah dipakai. Setelah jenis dipastikan valid (Mamalia atau Reptil), program meminta data tambahan sesuai jenisnya, lalu membuat objek Mamalia atau Reptil dan menambahkannya ke ArrayList menggunakan add().
 
 ```java
 public void tambahSatwa(Scanner input) {
@@ -144,22 +137,19 @@ public void tambahSatwa(Scanner input) {
 }
 ```
 
-Input yang diberikan pengguna adalah ID, nama, jenis, dan data tambahan (habitat atau berbisa) sesuai jenis yang dipilih. Data yang sudah lengkap dan valid dimasukkan ke `ArrayList` menggunakan `add()`.
+Input yang diberikan pengguna adalah ID, nama, jenis, dan data tambahan (habitat atau berbisa) sesuai jenis yang dipilih. Data yang sudah lengkap dan valid dimasukkan ke ArrayList menggunakan add().
 
-**[Proses Tambah Data]**
+**Proses Tambah Data**
 
 <img width="630" height="157" alt="image" src="https://github.com/user-attachments/assets/3232612a-6ce4-4f03-a64d-d0e9d3f7d921" />
 
-
-Gambar di atas menunjukkan proses penambahan data satwa baru beserta pesan berhasil yang ditampilkan program.
 
 ---
 
 ## Read tampilkanSatwa()
 
-**Fungsi:** menampilkan seluruh data satwa yang tersimpan di `ArrayList`.
-
-**Proses:** program mengecek apakah `ArrayList` kosong. Jika tidak kosong, program mengambil data satu per satu menggunakan `for-each` dan memanggil `tampilkanInfo()` pada tiap objek.
+**Fungsi:** menampilkan seluruh data satwa yang tersimpan di ArrayList.
+**Proses:** program mengecek apakah ArrayList kosong. Jika tidak kosong, program mengambil data satu per satu menggunakan for-each dan memanggil tampilkanInfo() pada tiap objek.
 
 ```java
 public void tampilkanSatwa() {
@@ -177,7 +167,7 @@ public void tampilkanSatwa() {
     }
 }
 ```
-## [Proses Tampilkan Data]
+**Proses Tampilkan Data**
 
 <img width="502" height="603" alt="image" src="https://github.com/user-attachments/assets/89a88e87-6526-47e2-b5e0-12984b5753d7" />
 
@@ -187,8 +177,7 @@ public void tampilkanSatwa() {
 ## Update updateSatwa()
 
 **Fungsi:** mengubah nama satwa berdasarkan ID.
-
-**Proses:** pengguna memasukkan ID satwa yang ingin diubah. Program mencari data dengan ID tersebut menggunakan `for-each`. Jika ditemukan, pengguna memasukkan nama baru, lalu nama diubah menggunakan `setNama()`.
+**Proses:** pengguna memasukkan ID satwa yang ingin diubah. Program mencari data dengan ID tersebut menggunakan for-each. Jika ditemukan, pengguna memasukkan nama baru, lalu nama diubah menggunakan setNama().
 
 ```java
 public void updateSatwa(Scanner input) {
@@ -213,7 +202,7 @@ public void updateSatwa(Scanner input) {
 
 Input yang diberikan pengguna adalah ID satwa dan nama baru. Data pada `ArrayList` tidak dihapus atau dibuat ulang, hanya atribut nama pada objek yang sudah ada yang diubah melalui setter.
 
-**[Proses Update Data]**
+**Proses Update Data**
 
 <img width="587" height="118" alt="image" src="https://github.com/user-attachments/assets/d57f2333-a594-443c-bf32-2929811f768e" />
 
@@ -224,8 +213,7 @@ Gambar di atas menunjukkan proses update nama satwa berdasarkan ID beserta pesan
 ## Delete hapusSatwa()
 
 **Fungsi:** menghapus data satwa berdasarkan ID.
-
-**Proses:** pengguna memasukkan ID satwa yang ingin dihapus. Program mencari posisi data dengan ID tersebut menggunakan `for`. Jika ditemukan, data dihapus dari `ArrayList` menggunakan `remove()`.
+**Proses:** pengguna memasukkan ID satwa yang ingin dihapus. Program mencari posisi data dengan ID tersebut menggunakan for. Jika ditemukan, data dihapus dari ArrayList menggunakan remove().
 
 ```java
 public void hapusSatwa(Scanner input) {
@@ -247,23 +235,22 @@ public void hapusSatwa(Scanner input) {
 }
 ```
 
-Input yang diberikan pengguna hanya ID satwa. Jika ID ditemukan, objek pada indeks tersebut dihapus dari `ArrayList`. Jika tidak ditemukan, program menampilkan pesan bahwa ID tidak ditemukan.
+Input yang diberikan pengguna hanya ID satwa. Jika ID ditemukan, objek pada indeks tersebut dihapus dari ArrayList. Jika tidak ditemukan, program menampilkan pesan bahwa ID tidak ditemukan.
 
 **[Proses Hapus Data]**
 
 <img width="560" height="98" alt="image" src="https://github.com/user-attachments/assets/4bf2c579-7c11-466d-9e9c-6fc57f1dea3c" />
 
-Gambar di atas menunjukkan proses penghapusan data satwa berdasarkan ID beserta pesan berhasil yang ditampilkan program.
 
 ---
 
-# Input Validation / Invalid Input
+# Input Validation
 
-Validasi input pada program ini ditangani oleh class `SatwaCek`, dengan tujuan agar program tidak berhenti secara tiba-tiba ketika pengguna memasukkan data yang salah.
+Validasi input pada program ini ditangani oleh class SatwaCek, dengan tujuan agar program tidak berhenti secara tiba-tiba ketika pengguna memasukkan data yang salah.
 
 ## Validasi ID
 
-ID harus berupa angka dan lebih dari 0. Validasi ini menggunakan `try-catch` untuk menangani `NumberFormatException`, serta `while` agar pengguna dapat mengulang input jika salah.
+ID harus berupa angka dan lebih dari 0. Validasi ini menggunakan try-catch untuk menangani NumberFormatException, serta while agar pengguna dapat mengulang input jika salah.
 
 ```java
 public static int cekId(Scanner input) {
@@ -284,9 +271,9 @@ public static int cekId(Scanner input) {
 }
 ```
 
-Jika pengguna memasukkan input seperti `"abc"`, `Integer.parseInt()` akan menghasilkan `NumberFormatException`, sehingga program menampilkan pesan `"Woopss, ID harus berupa angka Bosku!"` dan meminta ID dimasukkan kembali, tanpa menghentikan program.
+Jika pengguna memasukkan input seperti "abc", Integer.parseInt() akan menghasilkan NumberFormatException, sehingga program menampilkan pesan "Woopss, ID harus berupa angka Bosku!" dan meminta ID dimasukkan kembali, tanpa menghentikan program.
 
-**[Invalid Input]**
+**Invalid Input**
 
 <img width="516" height="113" alt="image" src="https://github.com/user-attachments/assets/d296f9da-251a-4b75-9f6b-0e94389dcef5" />
 
@@ -295,7 +282,7 @@ Jika pengguna memasukkan input seperti `"abc"`, `Integer.parseInt()` akan mengha
 
 ## ID Tidak Boleh Sama
 
-Saat menambah data, program mengecek apakah ID yang dimasukkan sudah ada di `ArrayList` menggunakan `for-each` di dalam method `idSudahAda()`. Jika sudah ada, pengguna diminta memasukkan ID lain dengan `while`.
+Saat menambah data, program mengecek apakah ID yang dimasukkan sudah ada di ArrayList menggunakan for-each di dalam method idSudahAda(). Jika sudah ada, pengguna diminta memasukkan ID lain dengan while.
 
 ```java
 private boolean idSudahAda(int id) {
@@ -314,7 +301,7 @@ private boolean idSudahAda(int id) {
 
 ## Validasi String Tidak Boleh Kosong
 
-Input berupa nama atau habitat tidak boleh kosong atau hanya berisi spasi. Program menggunakan `trim()` untuk menghapus spasi di awal dan akhir input, kemudian `isEmpty()` untuk memastikan input tidak kosong.
+Input berupa nama atau habitat tidak boleh kosong atau hanya berisi spasi. Program menggunakan trim() untuk menghapus spasi di awal dan akhir input, kemudian isEmpty() untuk memastikan input tidak kosong.
 
 ```java
 public static String cekString(Scanner input, String pesan) {
@@ -338,7 +325,7 @@ public static String cekString(Scanner input, String pesan) {
 
 ## Validasi Jenis Satwa
 
-Jenis satwa hanya boleh diisi `"Mamalia"` atau `"Reptil"`. Validasi ini menggunakan operator `!` dan `&&` di dalam `while`, sehingga pengguna terus diminta mengulang input selama jenis yang dimasukkan bukan keduanya.
+Jenis satwa hanya boleh diisi "Mamalia" atau "Reptil". Validasi ini menggunakan operator ! dan && di dalam while, sehingga pengguna terus diminta mengulang input selama jenis yang dimasukkan bukan keduanya.
 
 ```java
 while (!jenis.equalsIgnoreCase("Mamalia") && !jenis.equalsIgnoreCase("Reptil")) {
@@ -347,7 +334,7 @@ while (!jenis.equalsIgnoreCase("Mamalia") && !jenis.equalsIgnoreCase("Reptil")) 
 }
 ```
 
-`equalsIgnoreCase()` dipakai agar pengguna tetap bisa memasukkan huruf besar atau kecil, misalnya `"mamalia"` atau `"MAMALIA"`, dan tetap dianggap valid.
+equalsIgnoreCase() dipakai agar pengguna tetap bisa memasukkan huruf besar atau kecil, misalnya "mamalia" atau "MAMALIA", dan tetap dianggap valid.
 
 <img width="606" height="157" alt="image" src="https://github.com/user-attachments/assets/802a78da-33d8-4759-81c4-efc087d9674f" />
 
@@ -355,7 +342,7 @@ while (!jenis.equalsIgnoreCase("Mamalia") && !jenis.equalsIgnoreCase("Reptil")) 
 
 ## Validasi Pilihan Ya/Tidak
 
-Untuk data berbisa pada Reptil, pengguna hanya boleh menjawab `"ya"` atau `"tidak"`. Validasi ini juga menggunakan `equalsIgnoreCase()` dan `while`.
+Untuk data berbisa pada Reptil, pengguna hanya boleh menjawab "ya" atau `"tidak"`. Validasi ini juga menggunakan equalsIgnoreCase() dan while.
 
 ```java
 public static boolean cekBoolean(Scanner input) {
@@ -382,7 +369,7 @@ public static boolean cekBoolean(Scanner input) {
 
 # Encapsulation
 
-Encapsulation diterapkan pada class `Satwa` dengan menyembunyikan atribut menggunakan modifier `private` atau `protected`, sehingga atribut hanya dapat diakses melalui getter dan setter.
+Encapsulation diterapkan pada class Satwa dengan menyembunyikan atribut menggunakan modifier private atau protected, sehingga atribut hanya dapat diakses melalui getter dan setter.
 
 ```java
 private final int id;
@@ -398,24 +385,22 @@ public void setNama(String nama) {
 }
 ```
 
-`private` pada atribut `id` berarti hanya dapat diakses di dalam class `Satwa` sendiri. Atribut `id` juga dibuat `final` karena ID tidak boleh berubah setelah data dibuat, sehingga tidak disediakan setter untuk atribut ini.
+private pada atribut id berarti hanya dapat diakses di dalam class Satwa sendiri. Atribut id juga dibuat final karena ID tidak boleh berubah setelah data dibuat, sehingga tidak disediakan setter untuk atribut ini.
 
-Getter, seperti `getNama()`, digunakan untuk mengambil nilai atribut dari luar class tanpa mengakses atribut secara langsung.
+Getter, seperti getNama(), digunakan untuk mengambil nilai atribut dari luar class tanpa mengakses atribut secara langsung.
+Setter, seperti setNama(), digunakan untuk mengubah nilai atribut dengan cara yang terkontrol.
 
-Setter, seperti `setNama()`, digunakan untuk mengubah nilai atribut dengan cara yang terkontrol.
-
-Atribut tidak diakses langsung dari class lain agar data lebih aman dan perubahan data hanya dapat dilakukan melalui method yang sudah disediakan. Sebagai contoh, pada proses update, `SatwaCRUD` mengubah nama satwa dengan memanggil:
+Atribut tidak diakses langsung dari class lain agar data lebih aman dan perubahan data hanya dapat dilakukan melalui method yang sudah disediakan. Sebagai contoh, pada proses update, SatwaCRUD mengubah nama satwa dengan memanggil:
 
 ```java
 satwa.setNama(nama);
 ```
 
-
 ---
 
 # Inheritance
 
-Program ini memiliki satu superclass (`Satwa`) dan dua subclass (`Mamalia` dan `Reptil`):
+Program ini memiliki satu superclass (Satwa) dan dua subclass (Mamalia dan Reptil):
 
 ```text
 Super class Satwa
@@ -423,7 +408,7 @@ sub class Mamalia
 sub class Reptil
 ```
 
-Mamalia dan Reptil merupakan subclass dari Satwa menggunakan kata kunci `extends`, sehingga keduanya mewarisi atribut dan method yang ada pada `Satwa`, yaitu ID, nama, jenis, beserta getter, setter, dan `tampilkanInfo()`.
+Mamalia dan Reptil merupakan subclass dari Satwa menggunakan kata kunci extends, sehingga keduanya mewarisi atribut dan method yang ada pada Satwa, yaitu ID, nama, jenis, beserta getter, setter, dan tampilkanInfo().
 
 ### Class Mamalia
 
@@ -453,20 +438,20 @@ public class Reptil extends Satwa {
 }
 ```
 
-`super(id, nama, jenis)` digunakan untuk memanggil constructor milik superclass `Satwa`, sehingga data umum (id, nama, jenis) diisi oleh constructor `Satwa`, sedangkan data khusus (habitat pada Mamalia dan berbisa pada Reptil) diisi oleh constructor subclass itu sendiri.
+super(id, nama, jenis) digunakan untuk memanggil constructor milik superclass Satwa, sehingga data umum (id, nama, jenis) diisi oleh constructor Satwa, sedangkan data khusus habitat pada Mamalia dan berbisa pada Reptil diisi oleh constructor subclass itu sendiri.
 
-**[Struktur Inheritance]**
+**Struktur Inheritance**
 
 <img width="170" height="77" alt="image" src="https://github.com/user-attachments/assets/3402a1a3-d548-4235-96c0-dbbb56ff1b01" />
 
 
-Gambar di atas menunjukkan struktur package Model yang berisi class `Satwa`, `Mamalia`, dan `Reptil`, sesuai hierarki inheritance yang digunakan pada program.
+Gambar di atas menunjukkan struktur package Model yang berisi class Satwa, Mamalia, dan Reptil, sesuai hierarki inheritance yang digunakan pada program.
 
 ---
 
 # Polymorphism dan Method Overriding
 
-Program menerapkan polymorphism melalui method overriding pada method `tampilkanInfo()`.
+Program menerapkan polymorphism melalui method overriding pada method tampilkanInfo().
 
 ## Method pada Superclass Satwa
 
@@ -500,11 +485,10 @@ public void tampilkanInfo() {
 }
 ```
 
-Method ini disebut overriding karena `Mamalia` dan `Reptil` menulis ulang method `tampilkanInfo()` yang sudah ada pada superclass `Satwa`, ditandai dengan anotasi `@Override`.
+Method ini disebut overriding karena Mamalia dan Reptil menulis ulang method tampilkanInfo() yang sudah ada pada superclass Satwa, ditandai dengan anotasi @Override.
+Di dalamnya, super.tampilkanInfo()` tetap dipanggil agar informasi dasar dari Satwa (ID, nama, jenis) tetap ditampilkan, kemudian ditambahkan informasi khusus sesuai subclassnya
 
-Di dalamnya, `super.tampilkanInfo()` tetap dipanggil agar informasi dasar dari `Satwa` (ID, nama, jenis) tetap ditampilkan, kemudian ditambahkan informasi khusus sesuai subclass-nya.
-
-Perilaku polymorphism terlihat pada method `tampilkanSatwa()` di `SatwaCRUD`, di mana `ArrayList` bertipe `Satwa` dapat menyimpan objek `Mamalia` dan `Reptil` sekaligus:
+Perilaku polymorphism terlihat pada method tampilkanSatwa() di SatwaCRUD, di mana ArrayList bertipe Satwa dapat menyimpan objek Mamalia dan Reptil sekaligus:
 
 ```java
 for (Satwa satwa : daftarSatwa) {
@@ -514,7 +498,7 @@ for (Satwa satwa : daftarSatwa) {
 
 Meskipun perintah yang dipanggil sama, yaitu `satwa.tampilkanInfo()`, hasil yang ditampilkan berbeda tergantung objek sebenarnya. Jika objeknya Mamalia, maka habitat yang ditampilkan. Jika objeknya Reptil, maka status berbisa yang ditampilkan.
 
-**[Hasil Polymorphism/Overriding]**
+**Hasil Polymorphism overread**
 
 <img width="655" height="130" alt="image" src="https://github.com/user-attachments/assets/4cbb695e-f3fa-4de6-a7df-b0d6e826bd2f" />
 
@@ -522,13 +506,13 @@ Meskipun perintah yang dipanggil sama, yaitu `satwa.tampilkanInfo()`, hasil yang
 <img width="568" height="147" alt="image" src="https://github.com/user-attachments/assets/d684d8dd-7055-4ad7-8c8e-f7f04a90b7f5" />
 
 
-Gambar di atas menunjukkan hasil pemanggilan `tampilkanInfo()` pada objek Mamalia dan Reptil, yang menghasilkan tampilan berbeda sesuai jenis satwanya.
+Gambar di atas menunjukkan hasil pemanggilan tampilkanInfo() pada objek Mamalia dan Reptil, yang menghasilkan tampilan berbeda sesuai jenis satwanya.
 
 ---
 
 # Dummy Data
 
-Agar menu Tampilkan tidak langsung kosong saat program pertama kali dijalankan, `ArrayList daftarSatwa` sudah diisi 2 data awal pada constructor `SatwaCRUD`:
+Agar menu Tampilkan tidak langsung kosong saat program pertama kali dijalankan, ArrayList daftarSatwa sudah diisi 2 data awal pada constructor SatwaCRUD:
 
 ```java
 public SatwaCRUD() {
@@ -549,8 +533,8 @@ Gambar di atas menunjukkan tampilan dummy data saat pengguna memilih menu Tampil
 
 ---
 
-# Kesimpulan
+# Kesimpulan dan Pengembangan dari Minpro 1
 
-Mini Project 2 PBO ini berhasil dikembangkan dari Mini Project 1 dengan menerapkan konsep PBO secara lebih lengkap, yaitu input validation, encapsulation, inheritance, polymorphism melalui method overriding, penggunaan ArrayList dengan dummy data, serta struktur MVC sederhana.
+Mini Project 2 ini dikembangkan berdasarkan komentar dan masukan pada Mini Project 1, yaitu dengan menambahkan penjelasan validasi input pada README, memperluas validasi input di beberapa bagian program, serta mengembangkan pemodelan data dengan menambahkan class Mamalia dan Reptil sebagai subclass dari Satwa.
 
-Program dapat menjalankan seluruh proses CRUD (tambah, tampilkan, update, hapus data satwa) dengan validasi input yang mencegah program berhenti akibat kesalahan input dari pengguna.
+Dengan demikian, Mini Project 2 ini sudah menindaklanjuti komentar tersebut sekaligus menerapkan konsep PBO yang lebih lengkap, yaitu input validation, encapsulation, inheritance, polymorphism melalui method overriding, penggunaan ArrayList dengan dummy data, serta struktur MVC. 
