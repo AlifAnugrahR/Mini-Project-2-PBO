@@ -1,4 +1,9 @@
-# Mini Project 2 PBO – Sistem Pendataan dan Monitoring Satwa Dilindungi
+<div align="center">
+
+# Mini Project 2 PBO
+## Sistem Pendataan dan Monitoring Satwa Dilindungi
+
+</div>
 
 ## Latar Belakang
 
