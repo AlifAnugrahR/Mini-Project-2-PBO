@@ -1,7 +1,7 @@
 <div align="center">
 
 # Mini Project 2 PBO
-## Sistem Pendataan dan Monitoring Satwa Dilindungi
+# Sistem Pendataan dan Monitoring Satwa Dilindungi
 
 </div>
 
