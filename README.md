@@ -15,8 +15,6 @@ Program menyediakan empat fitur utama:
 - **Update Satwa** - mengubah nama satwa berdasarkan ID.
 - **Hapus Satwa** - menghapus data satwa berdasarkan ID.
 
-Program juga dilengkapi dengan validasi input agar data yang dimasukkan pengguna sesuai ketentuan, serta pesan output bergaya santai dengan sapaan "Boss" sebagai ciri khas program ini.
-
 ---
 
 ## MVC yang Digunakan
