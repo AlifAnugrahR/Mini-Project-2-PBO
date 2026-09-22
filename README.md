@@ -22,24 +22,20 @@ Program menyediakan empat fitur utama:
 Program ini menerapkan struktur **MVC (Model, View, Controller)** s
 
 ### Model
-
 Berisi class Satwa, Mamalia, dan Reptil.
 Bagian ini bertugas menyimpan data satwa.
 
 ### View
-
 Berisi class Menu.
 Bagian ini bertugas menampilkan menu dan menerima pilihan dari pengguna.
 
 ### Controller
-
 Berisi class SatwaCRUD dan SatwaCek.
 Bagian ini bertugas mengatur proses tambah, tampil, update, hapus data, serta memeriksa input pengguna.
 
 ### Main
-
 Berisi class MinproPbo2Satwaygdilindungi.
-Bagian ini menjalankan program, yaitu membuat objek `Scanner` dan `SatwaCRUD`, lalu memanggil `Menu`.
+Bagian ini menjalankan program, yaitu membuat objek Scanner dan SatwaCRUD, lalu memanggil Menu.
 
 **Struktur Package MVC**
 
