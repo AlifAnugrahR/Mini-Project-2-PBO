@@ -19,7 +19,7 @@ Program menyediakan empat fitur utama:
 
 ## MVC yang Digunakan
 
-Program ini menerapkan struktur **MVC (Model, View, Controller)** s
+Program ini menerapkan struktur **MVC (Model, View, Controller)** 
 
 ### Model
 Berisi class Satwa, Mamalia, dan Reptil.
@@ -51,7 +51,7 @@ Gambar di atas menunjukkan struktur package project, yaitu package Model berisi 
 Program dimulai dari method main() pada class MinproPbo2Satwaygdilindungi. Program membuat objek Scanner untuk membaca input, kemudian membuat objek SatwaCRUD. Saat objek SatwaCRUD dibuat, constructor-nya langsung mengisi data awal (dummy data) ke dalam ArrayList.
 Selanjutnya, Menu.jalankan() dipanggil dan menampilkan menu utama secara berulang menggunakan while (true), sampai pengguna memilih untuk keluar.
 
-**[Menu Utama]**
+**Menu Utama**
 
 <img width="436" height="245" alt="image" src="https://github.com/user-attachments/assets/ff529953-4f26-423e-a7f0-e2020030a95c" />
 
@@ -98,6 +98,7 @@ Seluruh proses CRUD ditangani oleh class SatwaCRUD yang menyimpan data pada Arra
 ## Create tambahSatwa()
 
 **Fungsi:** menambahkan data satwa baru ke dalam ArrayList.
+
 **Proses:** pengguna memasukkan ID, nama, dan jenis satwa. Program mengecek apakah ID sudah dipakai. Setelah jenis dipastikan valid (Mamalia atau Reptil), program meminta data tambahan sesuai jenisnya, lalu membuat objek Mamalia atau Reptil dan menambahkannya ke ArrayList menggunakan add().
 
 ```java
@@ -143,6 +144,7 @@ Input yang diberikan pengguna adalah ID, nama, jenis, dan data tambahan (habitat
 ## Read tampilkanSatwa()
 
 **Fungsi:** menampilkan seluruh data satwa yang tersimpan di ArrayList.
+
 **Proses:** program mengecek apakah ArrayList kosong. Jika tidak kosong, program mengambil data satu per satu menggunakan for-each dan memanggil tampilkanInfo() pada tiap objek.
 
 ```java
@@ -171,6 +173,7 @@ public void tampilkanSatwa() {
 ## Update updateSatwa()
 
 **Fungsi:** mengubah nama satwa berdasarkan ID.
+
 **Proses:** pengguna memasukkan ID satwa yang ingin diubah. Program mencari data dengan ID tersebut menggunakan for-each. Jika ditemukan, pengguna memasukkan nama baru, lalu nama diubah menggunakan setNama().
 
 ```java
@@ -194,7 +197,7 @@ public void updateSatwa(Scanner input) {
 }
 ```
 
-Input yang diberikan pengguna adalah ID satwa dan nama baru. Data pada `ArrayList` tidak dihapus atau dibuat ulang, hanya atribut nama pada objek yang sudah ada yang diubah melalui setter.
+Input yang diberikan pengguna adalah ID satwa dan nama baru. Data pada ArrayList tidak dihapus atau dibuat ulang, hanya atribut nama pada objek yang sudah ada yang diubah melalui setter.
 
 **Proses Update Data**
 
@@ -207,6 +210,7 @@ Gambar di atas menunjukkan proses update nama satwa berdasarkan ID beserta pesan
 ## Delete hapusSatwa()
 
 **Fungsi:** menghapus data satwa berdasarkan ID.
+
 **Proses:** pengguna memasukkan ID satwa yang ingin dihapus. Program mencari posisi data dengan ID tersebut menggunakan for. Jika ditemukan, data dihapus dari ArrayList menggunakan remove().
 
 ```java
@@ -231,7 +235,7 @@ public void hapusSatwa(Scanner input) {
 
 Input yang diberikan pengguna hanya ID satwa. Jika ID ditemukan, objek pada indeks tersebut dihapus dari ArrayList. Jika tidak ditemukan, program menampilkan pesan bahwa ID tidak ditemukan.
 
-**[Proses Hapus Data]**
+**Proses Hapus Data**
 
 <img width="560" height="98" alt="image" src="https://github.com/user-attachments/assets/4bf2c579-7c11-466d-9e9c-6fc57f1dea3c" />
 
@@ -336,7 +340,7 @@ equalsIgnoreCase() dipakai agar pengguna tetap bisa memasukkan huruf besar atau 
 
 ## Validasi Pilihan Ya/Tidak
 
-Untuk data berbisa pada Reptil, pengguna hanya boleh menjawab "ya" atau `"tidak"`. Validasi ini juga menggunakan equalsIgnoreCase() dan while.
+Untuk data berbisa pada Reptil, pengguna hanya boleh menjawab "ya" atau "tidak". Validasi ini juga menggunakan equalsIgnoreCase() dan while.
 
 ```java
 public static boolean cekBoolean(Scanner input) {
@@ -468,7 +472,7 @@ public void tampilkanInfo() {
 }
 ```
 
-## Override pada `Reptil`
+## Override pada Reptil
 
 ```java
 @Override
@@ -519,11 +523,19 @@ public SatwaCRUD() {
 
 Dummy data yang digunakan adalah Orangutan sebagai Mamalia dengan habitat Hutan, dan Komodo sebagai Reptil yang tidak berbisa.
 
-**[Data Dummy]**
+**Data Dummy**
 
 <img width="377" height="392" alt="image" src="https://github.com/user-attachments/assets/d43471bd-4c87-4b9c-a54a-04ba34f6df48" />
 
 Gambar di atas menunjukkan tampilan dummy data saat pengguna memilih menu Tampilkan Satwa untuk pertama kali.
+
+---
+
+
+## Keluar
+
+<img width="620" height="413" alt="image" src="https://github.com/user-attachments/assets/62ddd0d6-0983-42a1-932b-5f5e4375710e" />
+
 
 ---
 
